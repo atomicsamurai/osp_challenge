@@ -1,5 +1,5 @@
 # Overview
-This repo is my response to the Osprey Infomatics coding challenge.
+This repo is my response to the Osprey Informatics coding challenge.
 
 There are two python applications, dcs.py and cam.py
 
@@ -40,12 +40,17 @@ python cam.py
 
 On the server side, there are two constants (variables, really) which are configurable:
 
+```
 MAX_IMAGES_PER_CAMERA = 1000
 NUM_CAMERAS = 1000
+```
 
 On the camera client side, there are three configuration variables:
 
+```
 REQUEST_TIMEOUT = 5 (in seconds)
 NUM_CAMERAS = 1000
 DCS_URL = 'http://localhost:8888/camera/{}'
+```
+
 
