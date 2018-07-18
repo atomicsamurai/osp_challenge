@@ -4,7 +4,7 @@ import atexit
 from flask import Flask, render_template, request, Response
 app = Flask(__name__)
 
-MAX_IMAGES_PER_CAMERA = 100
+MAX_IMAGES_PER_CAMERA = 1000
 NUM_CAMERAS = 1000
 
 image_chunk_template = '{{"file_size": {}}}'
@@ -31,7 +31,7 @@ def getCamera(id):
 		image_chunk += image_chunk_template.format(image_size) + (", " if (image < num_images) else "")
 
 	camera_chunk = camera_chunk_template.format(id, image_chunk)
-	return camera_chunk
+	return Response(response=camera_chunk, mimetype="application/json")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8888, debug=True)
